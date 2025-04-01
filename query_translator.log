@@ -1,0 +1,25 @@
+2025-03-26 16:42:12,408 - root - ERROR - Query failed: SELECT date_trunc('month', s.date) AS sale_month, COUNT(*) AS total_sales FROM sales s JOIN products p ON s.product_id = p.id WHERE category = 'T-Shirt' GROUP BY sale_month;
+Error: Query failed: (sqlite3.OperationalError) no such function: date_trunc
+[SQL: SELECT date_trunc('month', s.date) AS sale_month, COUNT(*) AS total_sales FROM sales s JOIN products p ON s.product_id = p.id WHERE category = 'T-Shirt' GROUP BY sale_month;]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+SQL: SELECT date_trunc('month', s.date) AS sale_month, COUNT(*) AS total_sales FROM sales s JOIN products p ON s.product_id = p.id WHERE category = 'T-Shirt' GROUP BY sale_month;
+2025-03-26 16:47:51,015 - root - ERROR - Query failed: SELECT to_char(sales.date, 'MM/YYYY') AS sale_month, COUNT(*) AS number_of_sales FROM sales WHERE product_id = 1 GROUP BY sale_month;
+Error: Query failed: (sqlite3.OperationalError) no such function: to_char
+[SQL: SELECT to_char(sales.date, 'MM/YYYY') AS sale_month, COUNT(*) AS number_of_sales FROM sales WHERE product_id = 1 GROUP BY sale_month;]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+SQL: SELECT to_char(sales.date, 'MM/YYYY') AS sale_month, COUNT(*) AS number_of_sales FROM sales WHERE product_id = 1 GROUP BY sale_month;
+2025-03-26 16:48:21,690 - root - ERROR - Query failed: SELECT to_char(sales.date, 'YYYY-MM') AS sale_month, COUNT(*) AS number_of_sales FROM sales JOIN products ON sales.product_id = products.id WHERE category = 'T-shirt' AND color = 'Blue' GROUP BY sale_month;
+Error: Query failed: (sqlite3.OperationalError) no such function: to_char
+[SQL: SELECT to_char(sales.date, 'YYYY-MM') AS sale_month, COUNT(*) AS number_of_sales FROM sales JOIN products ON sales.product_id = products.id WHERE category = 'T-shirt' AND color = 'Blue' GROUP BY sale_month;]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+SQL: SELECT to_char(sales.date, 'YYYY-MM') AS sale_month, COUNT(*) AS number_of_sales FROM sales JOIN products ON sales.product_id = products.id WHERE category = 'T-shirt' AND color = 'Blue' GROUP BY sale_
+2025-03-26 16:57:14,257 - root - ERROR - Query failed: SELECT category, COUNT(*) AS total_sales FROM orders GROUP BY category ORDER BY total_sales DESC NULLS LAST;
+Error: Query failed: (sqlite3.OperationalError) no such column: category
+[SQL: SELECT category, COUNT(*) AS total_sales FROM orders GROUP BY category ORDER BY total_sales DESC NULLS LAST;]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+SQL: SELECT category, COUNT(*) AS total_sales FROM orders GROUP BY category ORDER BY total_sales DESC NULLS LAST;
+2025-03-26 16:59:25,186 - root - ERROR - Query failed: SELECT p.name, o.customer_name, to_char(o.order_date,'MM/DD/YYYY') AS order_month_year FROM orders o JOIN products p ON o.product_id = p.id ORDER BY p.price DESC NULLS LAST LIMIT 5;
+Error: Query failed: (sqlite3.OperationalError) no such function: to_char
+[SQL: SELECT p.name, o.customer_name, to_char(o.order_date,'MM/DD/YYYY') AS order_month_year FROM orders o JOIN products p ON o.product_id = p.id ORDER BY p.price DESC NULLS LAST LIMIT 5;]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+SQL: SELECT p.name, o.customer_name, to_char(o.order_date,'MM/DD/YYYY') AS order_month_year FROM orders o JOIN products p ON o.product_id = p.id ORDER BY p.price DESC NULLS LAST LIMIT 5;

@@ -1,0 +1,19 @@
+# Core Dependencies
+sqlalchemy==2.0.25
+pandas==2.1.4
+python-dotenv==1.0.0
+
+# NLP/SQL Translation
+ollama>=0.1.0
+langchain-core==0.1.53
+langchain-community==0.0.29
+
+# Web Interface
+streamlit==1.31.1
+plotly==5.18.0
+
+# Development (Optional)
+pytest==8.0.2
+black==24.2.0
+
+faker==24.11.0
